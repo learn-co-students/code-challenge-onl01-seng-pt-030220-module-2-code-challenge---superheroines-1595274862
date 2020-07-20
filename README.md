@@ -1,4 +1,4 @@
-# Rails Code Challenge - Superheroines
+# Rails Code Challenge - SuperVILLIANS
 
 For this assessment, you'll be working with a heroines and powers domain.
 
