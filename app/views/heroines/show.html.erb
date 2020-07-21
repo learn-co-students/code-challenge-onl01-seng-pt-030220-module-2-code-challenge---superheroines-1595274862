@@ -1,0 +1,5 @@
+<h1><%= @heroine.name %></h1>
+<h2><%= @heroine.super_name %></h2>
+<% @heroine.powers.each do |power| %>
+  <h3> <%= power.name %></h3>
+<% end %>
