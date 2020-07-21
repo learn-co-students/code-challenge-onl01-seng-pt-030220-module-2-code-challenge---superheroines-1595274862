@@ -14,7 +14,6 @@ class HeroinesController < ApplicationController
   def create
     @heroine = Heroine.new(heroine_params)
     power = Power.find(params[:heroine][:powers])
-    
     if @heroine.save
       @heroine.powers << power
       redirect_to @heroine

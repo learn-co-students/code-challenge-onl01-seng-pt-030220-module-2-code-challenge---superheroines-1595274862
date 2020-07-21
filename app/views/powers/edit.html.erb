@@ -1,0 +1,15 @@
+<h2>Update a Power</h2>
+
+<%= form_for @power do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %><br><br>
+  <%= f.label :description %>
+  <%= f.text_area :description %><br><br>
+  <%= f.label :power %><br><br>
+  <%= f.collection_check_boxes :heroines, Heroine.all, :id, :name, :include_hidden => false%><br>
+  <%= f.submit %>
+<% end %>
+
+
+ 
