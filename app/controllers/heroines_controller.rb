@@ -15,8 +15,13 @@ class HeroinesController < ApplicationController
 
   def create
     @heroine = Heroine.new(heroine_params)
-    @heroine.save
-    redirect_to heroine_path(@heroine)
+    if @heroine.save
+      redirect_to heroine_path(@heroine)
+      # creating a Heroine users is redirected to Heroine's show page
+    else
+      flash[:error] = @heroine.errors.full_messages
+      redirect_to new_heroine_path(@heroine)
+    end
   end
 
   private 

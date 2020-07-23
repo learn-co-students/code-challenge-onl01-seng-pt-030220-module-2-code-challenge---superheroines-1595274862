@@ -1,20 +1,29 @@
+<% if !!flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <h4><%= error %></h4> <br>
+    <% end %>
+<% end %>
+
 <%= form_for @heroine do |f| %>
 
-    <%= f.label "Name" %>
+    <%= f.text_field :name, placeholder: "Name", :required => true %>
+    <br>
+
+    <%= f.text_field :super_name, placeholder: "Super Name", :required => true %>
+    <br>
+
+    <%= f.collection_select :powers, Power.all, :id, :name, {:prompt => "Choose a Power...."}, :required => true %>
+
+    <br>
+    <%= f.submit %>
 
 <% end %>
 
 
-
-
-
-
 <% if false %>
 Show a form to create a new Heroine. It should have:
-
 an input for name
 an input for super name
 a select dropdown to choose a power
 a submit button to create the Heroine
-creating a Heroine users is redirected to Heroine's show page
 <% end %>
