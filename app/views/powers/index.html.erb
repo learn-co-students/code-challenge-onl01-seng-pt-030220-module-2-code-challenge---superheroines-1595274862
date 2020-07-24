@@ -4,8 +4,19 @@
   <% @powers.each do |power| %>
     <li>
      <%= link_to power.name, power_path(power) %>
-      <br>
+     <br>
       Description: <%= power.description %>
+     <%@powers.each do |p|%>
+     
+     <%p.heroines.each do |heroine|%>
+     <li>
+     <%=link_to heroine.super_name, heroine_path(heroine)%>
+     
+
+     </li>
+     <%end %>
+     <%end %>
+      
     </li>
     <br>
   <% end %>

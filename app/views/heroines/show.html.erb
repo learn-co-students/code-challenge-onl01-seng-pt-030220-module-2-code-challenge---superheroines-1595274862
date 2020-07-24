@@ -3,5 +3,11 @@
 
 <%@heroine.powers.each do |power|%>
 
-<h3><%=power.name%></h3>
+<h3><%=link_to power.name, power_path(power)%></h3>
+
+
 <%end%>
+<br>
+<%= link_to "edit", edit_heroine_path(@heroine) %>
+<br>
+<%= link_to 'Heroine Home', heroines_path %>

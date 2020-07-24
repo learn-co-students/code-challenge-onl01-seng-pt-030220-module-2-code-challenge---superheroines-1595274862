@@ -4,4 +4,5 @@ class Heroine < ApplicationRecord
     validates :name, presence: true
     validates :super_name, presence: true
     validates :super_name, uniqueness: true
+    accepts_nested_attributes_for :powers
 end

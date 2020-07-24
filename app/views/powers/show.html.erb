@@ -2,3 +2,10 @@
 <br> 
 <p>
 <%=@power.description%>
+
+<%@power.heroines.each do |heroine|%>
+
+<h3><%=link_to heroine.name, heroine_path(heroine)%></h3>
+<%end%>
+<br>
+<%= link_to "edit", edit_power_path(@power) %>

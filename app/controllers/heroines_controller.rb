@@ -21,11 +21,28 @@ class HeroinesController < ApplicationController
     end
   end
 
+
+  def edit
+    @heroine = Heroine.find_by(id: params[:id])
+  end
+
+  def update
+    @heroine = Heroine.find_by(id: params[:id])
+ 
+    
+      if @heroine.update(heroine_params)
+       redirect_to heroine_path(@heroine)
+     else 
+      render :edit
+      end
+  end
+  
+
   private
 
 
   def heroine_params
-    params.require(:heroine).permit(:name, :super_name, power_attributes: [:id, :name])
+    params.require(:heroine).permit(:name, :super_name, :power_ids => [])
   end
 
 end
